@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Jekyll, NexT" />
+  <meta name="keywords" content="" />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="&amp;nbsp; &amp;gt;An Undergraduate student at HIT.">
+<meta name="description" content="Self Attention">
 <meta name="keywords" content="Jekyll, NexT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Code Learner">
-<meta property="og:url" content="http://localhost:4000/about/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transformer">
+<meta property="og:url" content="http://localhost:4000/nlp/2020/07/01/Transformer/">
 <meta property="og:site_name" content="Code Learner">
-<meta property="og:description" content="&amp;nbsp; &amp;gt;An Undergraduate student at HIT.">
+<meta property="og:description" content="Self Attention">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code Learner">
-<meta name="twitter:description" content="&amp;nbsp; &amp;gt;An Undergraduate student at HIT.">
+<meta name="twitter:title" content="Transformer">
+<meta name="twitter:description" content="Self Attention">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>              About | Code Learner      </title>
+  <title>Transformer | Code Learner</title>
   
 
 
@@ -292,27 +292,174 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+
 <div id="posts" class="posts-expand">
-<header class="post-header">
+  
+  
 
-	<h1 class="post-title" itemprop="name headline">
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/nlp/2020/07/01/Transformer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SatoshiZ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Code Learner">
+    </span>
+
     
-      About
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            Transformer
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-01T00:00:00+08:00">
+                2020-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Nlp" itemprop="url" rel="index">
+                    <span itemprop="name">Nlp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+          
+
+        </div>
+      </header>
     
-  </h1>
 
+    <div class="post-body" itemprop="articleBody">
 
+      
+      
 
-</header>
-
+      
+        
   
   
-    <p>&nbsp;</p>
-<blockquote>
-  <p>An Undergraduate student at HIT.</p>
-</blockquote>
 
-  
+
+
+
+
+
+
+
+
+
+
+
+  <h4 id="self-attention">Self Attention</h4>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
 </div>
 
 
@@ -321,6 +468,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -338,10 +489,30 @@
     <div class="sidebar-inner">
 
       
+        
+        
+        
+
+
+
+
+
+
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/images/user.jpg"
@@ -427,6 +598,34 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-4"> <a class="nav-link" href="#self-attention"> <span class="nav-number">1</span> <span class="nav-text">Self Attention</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
