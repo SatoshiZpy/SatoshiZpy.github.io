@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-04-23T19:19:56+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Code Learner</title><author><name>SatoshiZ</name></author><entry><title type="html">Transformer</title><link href="http://localhost:4000/nlp/2020/07/01/Transformer/" rel="alternate" type="text/html" title="Transformer" /><published>2020-07-01T00:00:00+08:00</published><updated>2020-07-01T00:00:00+08:00</updated><id>http://localhost:4000/nlp/2020/07/01/Transformer</id><content type="html" xml:base="http://localhost:4000/nlp/2020/07/01/Transformer/">&lt;h4 id=&quot;self-attention&quot;&gt;Self Attention&lt;/h4&gt;</content><author><name>SatoshiZ</name></author><summary type="html">Self Attention</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-04-23T23:49:33+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Code Learner</title><author><name>SatoshiZ</name></author><entry><title type="html">Mips</title><link href="http://localhost:4000/%E8%AE%A1%E7%BB%84/2021/04/23/Mips/" rel="alternate" type="text/html" title="Mips" /><published>2021-04-23T00:00:00+08:00</published><updated>2021-04-23T00:00:00+08:00</updated><id>http://localhost:4000/%E8%AE%A1%E7%BB%84/2021/04/23/Mips</id><content type="html" xml:base="http://localhost:4000/%E8%AE%A1%E7%BB%84/2021/04/23/Mips/">&lt;h4 id=&quot;mips-instruction-field&quot;&gt;Mips instruction Field&lt;/h4&gt;
+
+&lt;table&gt;
+    &lt;tr&gt;
+    &lt;td&gt;op&lt;/td&gt;
+    &lt;td&gt;rs&lt;/td&gt;
+    &lt;td&gt;rt&lt;/td&gt;
+    &lt;td&gt;rd&lt;/td&gt;
+    &lt;td&gt;shamt&lt;/td&gt;
+    &lt;td&gt;funct&lt;/td&gt; 
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;op	6-bits	opcode that specifies the operation&lt;/p&gt;
+
+&lt;p&gt;rs	5-bits	register file address of the first source operand&lt;/p&gt;
+
+&lt;p&gt;rt	5-bits	register file address of the second source operand&lt;/p&gt;
+
+&lt;p&gt;rd	5-bits	register file address of the result’s destination&lt;/p&gt;
+
+&lt;p&gt;shamt	5-bits	shift amount(for shift instructions)&lt;/p&gt;
+
+&lt;p&gt;funct	6-bits	function code augmenting the opcode&lt;/p&gt;</content><author><name>SatoshiZ</name></author><summary type="html">Mips instruction Field</summary></entry><entry><title type="html">Transformer</title><link href="http://localhost:4000/nlp/2020/07/01/Transformer/" rel="alternate" type="text/html" title="Transformer" /><published>2020-07-01T00:00:00+08:00</published><updated>2020-07-01T00:00:00+08:00</updated><id>http://localhost:4000/nlp/2020/07/01/Transformer</id><content type="html" xml:base="http://localhost:4000/nlp/2020/07/01/Transformer/">&lt;h4 id=&quot;self-attention&quot;&gt;Self Attention&lt;/h4&gt;</content><author><name>SatoshiZ</name></author><summary type="html">Self Attention</summary></entry></feed>

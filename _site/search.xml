@@ -2,6 +2,21 @@
 <search>
   
     <entry>
+      <title><![CDATA[Mips]]></title>
+      <url>/%E8%AE%A1%E7%BB%84/2021/04/23/Mips/</url>
+      <content type="text"><![CDATA[Mips instruction Field        op    rs    rt    rd    shamt    funct     op	6-bits	opcode that specifies the operationrs	5-bits	register file address of the first source operandrt	5-bits	register file address of the second source operandrd	5-bits	register file address of the result’s destinationshamt	5-bits	shift amount(for shift instructions)funct	6-bits	function code augmenting the opcode]]></content>
+      <categories>
+        
+          <category> 计组 </category>
+        
+      </categories>
+      <tags>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[Transformer]]></title>
       <url>/nlp/2020/07/01/Transformer/</url>
       <content type="text"><![CDATA[Self Attention]]></content>
