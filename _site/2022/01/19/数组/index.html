@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="Mips instruction Field">
+<meta name="description" content="数组经验总结">
 <meta name="keywords" content="Jekyll, NexT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mips">
-<meta property="og:url" content="http://localhost:4000/%E8%AE%A1%E7%BB%84/2021/04/23/Mips/">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://localhost:4000/2022/01/19/%E6%95%B0%E7%BB%84/">
 <meta property="og:site_name" content="Code Learner">
-<meta property="og:description" content="Mips instruction Field">
+<meta property="og:description" content="数组经验总结">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mips">
-<meta name="twitter:description" content="Mips instruction Field">
+<meta name="twitter:title" content="数组">
+<meta name="twitter:description" content="数组经验总结">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>Mips | Code Learner</title>
+  <title>数组 | Code Learner</title>
   
 
 
@@ -304,7 +304,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/%E8%AE%A1%E7%BB%84/2021/04/23/Mips/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2022/01/19/%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SatoshiZ">
@@ -324,7 +324,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            Mips
+            数组
           
         </h1>
         
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-04-23T00:00:00+08:00">
-                2021-04-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-01-19T00:00:00+00:00">
+                2022-01-19
               </time>
             
 
@@ -348,29 +348,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/%E8%AE%A1%E7%BB%84" itemprop="url" rel="index">
-                    <span itemprop="name">计组</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -413,29 +390,74 @@
 
 
 
-  <h4 id="mips-instruction-field">Mips instruction Field</h4>
+  <h1 id="数组经验总结">数组经验总结</h1>
 
-<table>
-    <tr>
-    <td>op</td>
-    <td>rs</td>
-    <td>rt</td>
-    <td>rd</td>
-    <td>shamt</td>
-    <td>funct</td> 
-    </tr>
-</table>
-<p>op	6-bits	opcode that specifies the operation</p>
+<h2 id="双指针">双指针</h2>
 
-<p>rs	5-bits	register file address of the first source operand</p>
+<p>数组题目主要感觉除了暴力的遍历，双指针的使用可以大大降低时间复杂度，而且非常常用和便利。</p>
 
-<p>rt	5-bits	register file address of the second source operand</p>
+<h3 id="1-移除元素">1. 移除元素</h3>
 
-<p>rd	5-bits	register file address of the result’s destination</p>
+<h4 id="27-移除元素">27. 移除元素</h4>
 
-<p>shamt	5-bits	shift amount(for shift instructions)</p>
+<p>给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。</p>
 
-<p>funct	6-bits	function code augmenting the opcode</p>
+<p>不要使用额外的数组空间，你必须仅使用 $O(1)$ 额外空间并<strong>原地</strong>修改输入数组。</p>
+
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+
+<p>示例 1: 给定 nums = [3,2,2,3], val = 3, 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。 你不需要考虑数组中超出新长度后面的元素。</p>
+
+<p>示例 2: 给定 nums = [0,1,2,2,3,0,4,2], val = 2, 函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16</pre></td><td class="code"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">removeElement</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="c1">// 快慢指针</span>
+        <span class="kt">int</span> <span class="n">fastIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">slowIndex</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">slowIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">fastIndex</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">fastIndex</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">fastIndex</span><span class="o">]</span> <span class="o">!=</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">slowIndex</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">fastIndex</span><span class="o">];</span>
+                <span class="n">slowIndex</span><span class="o">++;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">slowIndex</span><span class="o">;</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="2滑动窗口变体">2.滑动窗口（变体）</h3>
+
+<h4 id="977有序数组的平方">977.有序数组的平方</h4>
+
+<p>给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。</p>
+
+<p>示例 1： 输入：nums = [-4,-1,0,3,10] 输出：[0,1,9,16,100] 解释：平方后，数组变为 [16,1,0,9,100]，排序后，数组变为 [0,1,9,16,100]</p>
+
+<p>示例 2： 输入：nums = [-7,-3,2,3,11] 输出：[4,9,9,49,121]</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18</pre></td><td class="code"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">sortedSquares</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">])</span> <span class="o">{</span>
+                <span class="n">result</span><span class="o">[</span><span class="n">index</span><span class="o">--]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">];</span>
+                <span class="o">++</span><span class="n">left</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">result</span><span class="o">[</span><span class="n">index</span><span class="o">--]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">];</span>
+                <span class="o">--</span><span class="n">right</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+
 
 
       
@@ -576,7 +598,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -656,7 +678,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-4"> <a class="nav-link" href="#mips-instruction-field"> <span class="nav-number">1</span> <span class="nav-text">Mips instruction Field</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#数组经验总结"> <span class="nav-number">1</span> <span class="nav-text">数组经验总结</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#双指针"> <span class="nav-number">1.1</span> <span class="nav-text">双指针</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#1-移除元素"> <span class="nav-number">1.1.1</span> <span class="nav-text">1. 移除元素</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#27-移除元素"> <span class="nav-number">1.1.1.1</span> <span class="nav-text">27. 移除元素</span> </a> </li> </ol> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#2滑动窗口变体"> <span class="nav-number">1.1.2</span> <span class="nav-text">2.滑动窗口（变体）</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#977有序数组的平方"> <span class="nav-number">1.1.2.1</span> <span class="nav-text">977.有序数组的平方</span> </a> </li> </ol> </li> </ol> </li> </ol> </li>
     </ol>
   </div>
             
@@ -681,7 +703,7 @@
   
   
   &copy;  2020 - 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-anchor"></i>
   </span>
